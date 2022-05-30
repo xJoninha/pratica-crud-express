@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 16px;
+}
+
+header,
+footer {
+  align-items: center;
+  background-color: #00b7ff;
+  color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 24px;
+}
+
+header a,
+footer a {
+  color: #fff;
+  margin: 8px;
+  padding: 8px;
+}
+
+main,
+aside {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  padding: 24px;
+}

@@ -1,0 +1,45 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <h2>Usuários</h2>
+    <% if ( locals.usuarios ) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Avatar</th>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+          <th>email</th>
+          <th>Idade</th>
+          <th>Admin</th>
+          <th>Controles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let usuario of usuarios) { %>
+        <tr>
+          <td>
+            <img src="<%= usuario.avatar ? `images/avatar/`+usuario.avatar : `images/avatar-null.png` %>" alt="Avatar de <%= usuario.nome %>" width="60px" height="60px" style="border-radius: 50%;display: block;height: 60px;width: 60px;">
+          </td>
+          <td><%= usuario.id %></td>
+          <td><%= usuario.nome %></td>
+          <td><%= usuario.sobrenome %></td>
+          <td><%= usuario.email %></td>
+          <td><%= usuario.idade %></td>
+          <td><%= usuario.admin %></td>
+          <td>
+            <div>
+              <a href="/usuarios/<%= usuario.id %>">Ver</a> | <a href="/usuarios/<%= usuario.id %>/editar">Editar</a> | <a href="/usuarios/<%= usuario.id %>/apagar">Apagar</a>
+            </div>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% } %>
+  </section>
+</main>
+<%- include('partials/footer') %>
