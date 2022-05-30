@@ -1,0 +1,25 @@
+{
+  "name": "pratica-crud-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server-preset": "express server --view=ejs && cd server && npm i method-override --save && npm i nodemon --save -D && npm install && mkdir data && mkdir controllers && touch data/users.json && touch controllers/UsersController.js && touch controllers/IndexController.js",
+    "server-install": "cd server && npm install && npm run dev",
+    "server-dev": "cd server && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcelo-Diament/pratica-crud-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marcelo-Diament/pratica-crud-express/issues"
+  },
+  "homepage": "https://github.com/Marcelo-Diament/pratica-crud-express#readme",
+  "dependencies": {
+    "express-generator": "^4.16.1"
+  }
+}

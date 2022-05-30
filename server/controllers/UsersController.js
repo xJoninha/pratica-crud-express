@@ -61,6 +61,4 @@ controller.show = (req, res) => {
     })
 }
 
-// POST / PUT / DELETE 
-
 module.exports = controller
