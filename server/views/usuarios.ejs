@@ -1,10 +1,12 @@
 <%- include('partials/head') %>
 <%- include('partials/header') %>
 <main>
-  <h1><%= title %></h1>
+  <h1>
+    <%= title %>
+  </h1>
   <section>
     <h2>Usuários</h2>
-    <% if ( locals.usuarios ) { %>
+    <% if (locals.usuarios) { %>
     <table>
       <thead>
         <tr>
@@ -22,24 +24,42 @@
         <% for (let usuario of usuarios) { %>
         <tr>
           <td>
-            <img src="<%= usuario.avatar ? `images/avatar/`+usuario.avatar : `images/avatar-null.png` %>" alt="Avatar de <%= usuario.nome %>" width="60px" height="60px" style="border-radius: 50%;display: block;height: 60px;width: 60px;">
+            <img src="/images/<%= usuario.avatar ? `avatar/${usuario.avatar}` : 'avatar-null.png' %>" alt="Avatar <%= usuario.nome %>" height="60" width="60" style="border-radius:50%;width:60px;height:60px;">
           </td>
-          <td><%= usuario.id %></td>
-          <td><%= usuario.nome %></td>
-          <td><%= usuario.sobrenome %></td>
-          <td><%= usuario.email %></td>
-          <td><%= usuario.idade %></td>
-          <td><%= usuario.admin %></td>
           <td>
-            <div>
-              <a href="/usuarios/<%= usuario.id %>">Ver</a> | <a href="/usuarios/<%= usuario.id %>/editar">Editar</a> | <a href="/usuarios/<%= usuario.id %>/apagar">Excluir</a>
-            </div>
+            <%= usuario.id %>
+          </td>
+          <td>
+            <%= usuario.nome %>
+          </td>
+          <td>
+            <%= usuario.sobrenome %>
+          </td>
+          <td>
+            <%= usuario.email %>
+          </td>
+          <td>
+            <%= usuario.idade %>
+          </td>
+          <td>
+            <%= usuario.admin %>
+          </td>
+          <td>
+            <a href="/usuarios/<%= usuario.id %>">ver</a> | <a href="/usuarios/<%= usuario.id %>/editar">editar</a>
+            | <a href="/usuarios/<%= usuario.id %>/apagar">excluir</a>
           </td>
         </tr>
         <% } %>
       </tbody>
     </table>
+    <% } else { %>
+    <div>
+      <h3>Ops... parece que não há usuários cadastrados ainda.</h3>
+    </div>
     <% } %>
   </section>
+  <div>
+    <a href="/">Página Inicial</a> | <a href="/usuarios/adicionar">Adicionar Usuário</a>
+  </div>
 </main>
 <%- include('partials/footer') %>

@@ -1,6 +1,47 @@
 <%- include('partials/head') %>
-<%- include('partials/header') %>
-<main>
-
-</main>
-<%- include('partials/footer') %>
+  <%- include('partials/header') %>
+    <main>
+      <h1>
+        <%= title %>
+      </h1>
+      <section>
+        <h2>Excluir <%= usuario.nome %>
+            <%= usuario.sobrenome %>?
+        </h2>
+        <p>Confirme a exclusão do usuário <%= usuario.nome %>
+            <%= usuario.sobrenome %>.</p>
+        <form action="/usuarios/<%= usuario.id %>/apagar?_method=delete" method="post">
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Fulano" value="<%= usuario.nome %>" disabled />
+          </div>
+          <div>
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" name="sobrenome" id="sobrenome" placeholder="de Tal" value="<%= usuario.sobrenome %>"
+              disabled />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="de Tal" value="<%= usuario.email %>" disabled />
+          </div>
+          <div>
+            <label for="idade">Idade</label>
+            <input type="number" name="idade" id="idade" min="18" max="200" step="1" value="<%= usuario.idade %>"
+              disabled />
+          </div>
+          <div>
+            <label for="descricao">Breve Descrição</label><br>
+            <textarea name="descricao" id="descricao" cols="30" rows="20" minlength="10" maxlength="200" disabled>
+          <%= usuario.descricao %>
+        </textarea>
+          </div>
+          <div>
+            <input type="checkbox" name="admin" id="admin" checked="<%= usuario.admin %>" disabled />
+            <label for="admin">Admin</label>
+          </div>
+          <input type="hidden" name="modified_at" value="<%= new Date() %>">
+          <button>Confirmar Exclusão</button>
+        </form>
+      </section>
+    </main>
+    <%- include('partials/footer') %>

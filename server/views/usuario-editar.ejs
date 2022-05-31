@@ -1,50 +1,48 @@
 <%- include('partials/head') %>
-<%- include('partials/header') %>
-<main>
-  <h1>
-    <%= title %>
-  </h1>
-  <section>
-    <h2>Editar Usuário <%= usuario.nome %>
-      <%= usuario.sobrenome %>
-    </h2>
-    <p>Edite os dados do usuário <%= usuario.nome %>
-      <%= usuario.sobrenome %>.</p>
-    <form action="/usuarios/<%= usuario.id %>/editar?_method=put" method="post" enctype="multipart/form-data">
-      <div>
-        <img src="<%= usuario.avatar ? `/images/avatar/`+usuario.avatar : `/images/avatar-null.png` %>" alt="Avatar <%= usuario.nome %>" height="60" width="60" style="border-radius:50%;width:60px;height:60px;display:block;">
-        <label for="avatar">Avatar</label>
-        <input type="file" name="avatar" id="avatar" value="<%= usuario.avatar %>" accept="image/*" capture="user" />
-      </div>
-      <div>
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" placeholder="Fulano" value="<%= usuario.nome %>" required />
-      </div>
-      <div>
-        <label for="sobrenome">Sobrenome</label>
-        <input type="text" name="sobrenome" id="sobrenome" placeholder="de Tal" value="<%= usuario.sobrenome %>" required />
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="email@provedor.com" value="<%= usuario.email %>" required />
-      </div>
-      <div>
-        <label for="idade">Idade</label>
-        <input type="number" name="idade" id="idade" min="18" max="200" step="1" value="<%= usuario.idade %>" required />
-      </div>
-      <div>
-        <label for="descricao">Breve Descrição</label><br>
-        <textarea name="descricao" id="descricao" cols="30" rows="20" minlength="10" maxlength="200">
+  <%- include('partials/header') %>
+    <main>
+      <h1>
+        <%= title %>
+      </h1>
+      <section>
+        <h2>Editar <%= usuario.nome %>
+            <%= usuario.sobrenome %>
+        </h2>
+        <p>Edite os dados do usuário <%= usuario.nome %>
+            <%= usuario.sobrenome %>.</p>
+        <form action="/usuarios/<%= usuario.id %>/editar?_method=put" method="post">
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Fulano" value="<%= usuario.nome %>" required />
+          </div>
+          <div>
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" name="sobrenome" id="sobrenome" placeholder="de Tal" value="<%= usuario.sobrenome %>"
+              required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="email@provedor.com" value="<%= usuario.email %>"
+              required />
+          </div>
+          <div>
+            <label for="idade">Idade</label>
+            <input type="number" name="idade" id="idade" min="18" max="200" step="1" value="<%= usuario.idade %>"
+              required />
+          </div>
+          <div>
+            <label for="descricao">Breve Descrição</label><br>
+            <textarea name="descricao" id="descricao" cols="30" rows="20" minlength="10" maxlength="200">
           <%= usuario.descricao %>
         </textarea>
-      </div>
-      <div>
-        <input type="checkbox" name="admin" id="admin" checked="<%= usuario.admin %>" />
-        <label for="admin">Admin</label>
-      </div>
-      <input type="hidden" name="modified_at" value="<%= new Date() %>">
-      <button>Editar</button>
-    </form>
-  </section>
-</main>
-<%- include('partials/footer') %>
+          </div>
+          <div>
+            <input type="checkbox" name="admin" id="admin" checked="<%= usuario.admin %>" />
+            <label for="admin">Admin</label>
+          </div>
+          <input type="hidden" name="modified_at" value="<%= new Date() %>">
+          <button>Editar</button>
+        </form>
+      </section>
+    </main>
+    <%- include('partials/footer') %>

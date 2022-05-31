@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "nome": "Fulano",
+      "sobrenome": "de Tal",
+      "email": "fulano@tal.com.br",
+      "idade": "53",
+      "descricao": "Menino bom, educado. Gente boa.",
+      "admin": true,
+      "avatar": null
+    },
+    {
+      "id": 2,
+      "nome": "Beltrano",
+      "sobrenome": "Dias",
+      "email": "beltrano@dias.com",
+      "idade": 15,
+      "descricao": "Moleque bagunceiro, cheio de molecagem. Vacilão.",
+      "admin": false,
+      "avatar": null
+    },
+    {
+      "id": 3,
+      "nome": "Ciclano",
+      "sobrenome": "Reis",
+      "email": "ciclano@reis.com.br",
+      "idade": "33",
+      "descricao": "O Ciclano é um sujeito muito gente boa. Cara ponta firme.",
+      "admin": true,
+      "avatar": null
+    }
+  ]
