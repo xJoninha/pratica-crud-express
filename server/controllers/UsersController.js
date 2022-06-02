@@ -86,8 +86,8 @@ controller.update = async (req, res) => {
 
 controller.exclude = (req, res) =>
   res.render("usuario-excluir", {
-    title: `Excluir Usuário ${req.params.id}`,
-    usuario: getUsuarioPorId(req.params.id),
+    title: `Excluir Usuário ${usuario.nome}`,
+    usuario,
   });
 
 controller.delete = async (req, res) => {

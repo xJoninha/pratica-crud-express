@@ -1,6 +1,32 @@
 <%- include('partials/head') %>
 <%- include('partials/header') %>
 <main>
-  
+  <h1>
+    <%= title %>
+  </h1>
+  <section>
+    <h2>Usuários</h2>
+    <% if (locals.usuario) { %>
+          <div>
+            <img src="/images/<%= usuario.avatar ? `avatar/${usuario.avatar}` : 'avatar-null.png' %>" alt="Avatar <%= usuario.nome %>" height="60" width="60" style="border-radius:50%;width:60px;height:60px;">
+          </div>
+          <small><%= usuario.id %></small>
+          <h3><%= usuario.nome %> <%= usuario.sobrenome %></h3>
+          <p><%= usuario.email %></p>
+          <p><%= usuario.idade %></p>
+          <p><%= usuario.admin ? "Admin" : "Usuário" %></p>
+          <div>
+            <a href="/usuarios">Usuários</a> | <a href="/usuarios/<%= usuario.id %>/editar">editar</a>
+            | <a href="/usuarios/<%= usuario.id %>/apagar">excluir</a>
+          </div>
+    <% } else { %>
+    <div>
+      <h3>Ops... parece que não há usuário cadastrado com esse ID ainda.</h3>
+    </div>
+    <% } %>
+  </section>
+  <div>
+    <a href="/">Página Inicial</a> | <a href="/usuarios/adicionar">Adicionar Usuário</a>
+  </div>
 </main>
 <%- include('partials/footer') %>

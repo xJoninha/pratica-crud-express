@@ -7,7 +7,12 @@
       <section>
         <h2>Formulário de Cadastro</h2>
         <p>Preencha o formulário abaixo.</p>
-        <form action="/usuarios/adicionar" method="post">
+        <form action="/usuarios/adicionar" method="post" enctype="multipart/form-data">
+          <div>
+            <img src="/images/avatar-null.png" alt="Avatar" height="60" width="60" style="border-radius:50%;width:60px;height:60px;">
+            <label for="avatar">Avatar</label>
+            <input type="file" name="avatar" id="avatar" accept="image/" capture="device">
+          </div>
           <div>
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome" placeholder="Fulano" required />

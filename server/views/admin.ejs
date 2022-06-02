@@ -1,0 +1,70 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main>
+  <section id="listagem">
+    <ul>
+      <li>
+        <div>Fulano de Tal, 23 anos</div>
+        <div>Ver | Editar | Excluir</div>
+      </li>
+      <li>
+        <div>Fulano de Tal, 23 anos</div>
+        <div>Ver | Editar | Excluir</div>
+      </li>
+      <li>
+        <div>Fulano de Tal, 23 anos</div>
+        <div>Ver | Editar | Excluir</div>
+      </li>
+    </ul>
+  </section>
+  <section class="tabela">
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+          <th>Idade</th>
+          <th>Controles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fulano</td>
+          <td>de Tal</td>
+          <td>23 anos</td>
+          <td>Ver | Editar | Excluir</td>
+        </tr>
+        <tr>
+          <td>Fulano</td>
+          <td>de Tal</td>
+          <td>23 anos</td>
+          <td>Ver | Editar | Excluir</td>
+        </tr>
+        <tr>
+          <td>Fulano</td>
+          <td>de Tal</td>
+          <td>23 anos</td>
+          <td>Ver | Editar | Excluir</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section id="formulario">
+    <form action="/registro/adicionar" action="post">
+      <div>
+      <label for="nome">nome</label>
+      <input type="text" name="nome" id="nome" value="Fulano">
+    </div>
+    <div>
+      <label for="sobrenome">sobrenome</label>
+      <input type="text" name="sobrenome" id="sobrenome" placeholder="de Tal">
+    </div>
+    <div>
+      <label for="idade">idade</label>
+      <input type="number" name="idade" id="idade">
+    </div>
+    <button>Cadastrar</button>
+    </form>
+  </section>
+</main>
+<%- include('partials/footer') %>
